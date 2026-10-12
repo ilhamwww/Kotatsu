@@ -18,7 +18,7 @@ android {
 	namespace = 'org.koitharu.kotatsu'
 
 	defaultConfig {
-		applicationId 'org.koitharu.kotatsu'
+		applicationId 'com.kaze.manga'
 		minSdk = 23
 		targetSdk = 36
 		versionCode = 1033
