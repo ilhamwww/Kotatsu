@@ -28,11 +28,10 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android Platform 36 & Build Tools
+      - name: Install Android SDK Platform 36 & Build Tools
         run: |
+          export ANDROID_HOME=${ANDROID_HOME:-/usr/local/lib/android/sdk}
+          export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/tools/bin:$PATH
           yes | sdkmanager --licenses || true
           sdkmanager "platforms;android-36" "build-tools;35.0.0"
 
